@@ -381,57 +381,41 @@ body {
 .attractions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
   margin-top: 48px;
 }
 .attraction-card {
-  position: relative;
-  height: 380px;
-  border-radius: 4px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   padding: 32px;
-  text-decoration: none;
-  color: #fff;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.06);
 }
-.attraction-card-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.attraction-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%);
-}
-.attraction-card-content { position: relative; z-index: 1; }
 .attraction-tag {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold-on-dark);
-  margin-bottom: 8px;
+  color: var(--gold-text);
+  display: block;
+  margin-bottom: 10px;
 }
 .attraction-card h3 {
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  margin-bottom: 4px;
+  color: var(--body-text);
+  margin-bottom: 6px;
 }
 .attraction-distance {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+.attraction-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
 }
 
 /* ── DINING ── */
@@ -631,8 +615,7 @@ body {
   .gallery-item:nth-child(6) { grid-column: 1 / 2; height: 220px; }
   .gallery-item:nth-child(7) { grid-column: 2 / 3; height: 220px; }
   .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .attractions-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .attraction-card { height: 300px; }
+  .attractions-grid { grid-template-columns: 1fr; gap: 20px; }
   .dining-section { padding: 64px 24px; }
   .dining-grid { grid-template-columns: 1fr; }
   .travel-grid { grid-template-columns: repeat(2, 1fr); }
@@ -810,52 +793,40 @@ body {
   <h2 class="section-title">Explore the East End</h2>
   <div class="attractions-grid">
     <article class="attraction-card">
-      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=75" alt="">
-      <div class="attraction-card-content">
-        <p class="attraction-tag">Beach</p>
-        <h3>Main Beach</h3>
-        <p class="attraction-distance">3 miles · 8 min drive</p>
-      </div>
+      <span class="attraction-tag">Beach</span>
+      <h3>Main Beach</h3>
+      <p class="attraction-distance">3 miles · 8 min drive</p>
+      <p>East Hampton's iconic ocean beach with pavilion, lifeguards, and food service — consistently ranked among America's best.</p>
     </article>
     <article class="attraction-card">
-      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=75" alt="">
-      <div class="attraction-card-content">
-        <p class="attraction-tag">Beach</p>
-        <h3>Wainscott Beach</h3>
-        <p class="attraction-distance">1.5 miles · 4 min drive</p>
-      </div>
+      <span class="attraction-tag">Beach</span>
+      <h3>Wainscott Beach</h3>
+      <p class="attraction-distance">1.5 miles · 4 min drive</p>
+      <p>Pristine ocean access at the end of Beach Lane with wide sandy shores, gentle surf, and uncrowded village charm.</p>
     </article>
     <article class="attraction-card">
-      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?w=800&q=75" alt="">
-      <div class="attraction-card-content">
-        <p class="attraction-tag">Culture</p>
-        <h3>Guild Hall</h3>
-        <p class="attraction-distance">3.5 miles · 9 min drive</p>
-      </div>
+      <span class="attraction-tag">Culture</span>
+      <h3>Guild Hall</h3>
+      <p class="attraction-distance">3.5 miles · 9 min drive</p>
+      <p>East Hampton's cultural center featuring a permanent collection of American art by Pollock, de Kooning, and Jasper Johns, plus live theater at John Drew.</p>
     </article>
     <article class="attraction-card">
-      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=800&q=75" alt="">
-      <div class="attraction-card-content">
-        <p class="attraction-tag">Culture</p>
-        <h3>Parrish Art Museum</h3>
-        <p class="attraction-distance">6 miles · 12 min drive</p>
-      </div>
+      <span class="attraction-tag">Culture</span>
+      <h3>Parrish Art Museum</h3>
+      <p class="attraction-distance">6 miles · 12 min drive</p>
+      <p>Architecturally acclaimed Herzog &amp; de Meuron–designed museum in Water Mill showcasing artists of the East End, from William Merritt Chase to Lee Krasner.</p>
     </article>
     <article class="attraction-card">
-      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=75" alt="">
-      <div class="attraction-card-content">
-        <p class="attraction-tag">Wine</p>
-        <h3>Wölffer Estate Vineyard</h3>
-        <p class="attraction-distance">4 miles · 10 min drive</p>
-      </div>
+      <span class="attraction-tag">Wine</span>
+      <h3>Wölffer Estate Vineyard</h3>
+      <p class="attraction-distance">4 miles · 10 min drive</p>
+      <p>Sagaponack's family-led estate renowned for "Summer in a Bottle" rosé, tasting-room experiences, and wines blending European discipline with New World character.</p>
     </article>
     <article class="attraction-card">
-      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=75" alt="">
-      <div class="attraction-card-content">
-        <p class="attraction-tag">Nature</p>
-        <h3>Paumanok Path</h3>
-        <p class="attraction-distance">0.5 miles · 2 min drive</p>
-      </div>
+      <span class="attraction-tag">Nature</span>
+      <h3>Paumanok Path</h3>
+      <p class="attraction-distance">0.5 miles · 2 min drive</p>
+      <p>A 125-mile trail system from Rocky Point to Montauk Point, with 45 miles winding through East Hampton's protected preserves and forests.</p>
     </article>
   </div>
 </section>
@@ -927,7 +898,7 @@ body {
   <p class="eyebrow" style="color: var(--gold-on-dark);">Schedule a Showing</p>
   <h2>Begin Your Wainscott Story</h2>
   <p>Experience this exceptional Hamptons retreat in person. Contact the listing agent to arrange a private tour of 6 East Gate Road.</p>
-  <a href="mailto:terry.thompson@elliman.com?subject=Inquiry%20—%206%20East%20Gate%20Road%2C%20Wainscott" class="cta-btn">Request Information</a>
+  <a href="mailto:mike.moran@elliman.com?subject=Inquiry%20—%206%20East%20Gate%20Road%2C%20Wainscott" class="cta-btn">Request Information</a>
 </section>
 
 </main>
@@ -935,7 +906,7 @@ body {
 <!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <p class="footer-address">6 East Gate Road, Wainscott, NY 11975</p>
-  <p class="footer-broker">Listing Courtesy of Douglas Elliman Real Estate · Terry Thompson · 631-204-2734</p>
+  <p class="footer-broker">Listing Courtesy of Douglas Elliman Real Estate · Richard Mike Moran, Real Estate Salesperson · (212) 579-1919</p>
   <p>&copy; 2026 Douglas Elliman Real Estate. All rights reserved. MLS #406415</p>
 </footer>
 
