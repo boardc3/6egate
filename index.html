@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6 East Gate Road — Wainscott, NY</title>
+<meta name="description" content="A quintessential 1920s Hamptons cottage on 0.46 private acres in Wainscott — 4 bedrooms, 3 bathrooms, pool, and timeless charm minutes from the ocean.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory: #f5f2ee;
+  --dark: #0d0d0d;
+  --dark-surface: #1a1a1a;
+  --body-text: #2c2c2c;
+  --gold: #b8960c;
+  --gold-text: #7a6508;
+  --gold-on-dark: #d4af37;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --focus-ring: #4A90D9;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+*:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-video { display: none !important; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--body-text);
+  background: var(--ivory);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--dark);
+  color: #fff;
+  padding: 12px 24px;
+  z-index: 10000;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+}
+.skip-link:focus { top: 0; }
+
+/* ── NAV ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s, padding 0.3s;
+}
+.site-nav.scrolled {
+  background: rgba(13,13,13,0.95);
+  padding: 14px 48px;
+  backdrop-filter: blur(10px);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-on-dark); }
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.hamburger span + span { margin-top: 6px; }
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13,13,13,0.97);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: var(--dark);
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.1) 40%,
+    rgba(0,0,0,0.4) 70%,
+    rgba(0,0,0,0.7) 100%
+  );
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px 80px;
+  color: #fff;
+  max-width: 900px;
+}
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-on-dark);
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.hero-subtitle {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 32px;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.hero-stat-value {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 600;
+  display: block;
+}
+.hero-stat-label {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.scroll-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 24px;
+  height: 40px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+}
+.scroll-hint::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 2px;
+  margin-top: 6px;
+  animation: scrollDown 1.8s ease-in-out infinite;
+}
+@keyframes scrollDown {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(12px); opacity: 0.3; }
+}
+
+/* ── SECTIONS ── */
+.section-pad { padding: 100px 48px; max-width: 1320px; margin: 0 auto; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--body-text);
+  margin-bottom: 24px;
+}
+.section-title.light { color: #fff; }
+
+/* ── INTRO ── */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.intro-text p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+.intro-image {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* ── GALLERY ── */
+.gallery-section {
+  background: var(--dark);
+  padding: 100px 48px;
+}
+.gallery-grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+}
+.gallery-item {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+.gallery-item:hover img,
+.gallery-item:focus img { transform: scale(1.03); }
+.gallery-item:nth-child(1) { grid-column: 1 / 8; height: 400px; }
+.gallery-item:nth-child(2) { grid-column: 8 / 13; height: 400px; }
+.gallery-item:nth-child(3) { grid-column: 1 / 5; height: 320px; }
+.gallery-item:nth-child(4) { grid-column: 5 / 9; height: 320px; }
+.gallery-item:nth-child(5) { grid-column: 9 / 13; height: 320px; }
+.gallery-item:nth-child(6) { grid-column: 1 / 7; height: 360px; }
+.gallery-item:nth-child(7) { grid-column: 7 / 13; height: 360px; }
+
+/* ── IMAGE BREAK ── */
+.image-break {
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── AMENITIES ── */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 48px;
+}
+.amenity-card {
+  text-align: center;
+  padding: 40px 24px;
+}
+.amenity-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
+  color: var(--gold);
+}
+.amenity-card h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--body-text);
+}
+.amenity-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ── ATTRACTIONS ── */
+.attractions-section { background: var(--ivory); }
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.attraction-card {
+  position: relative;
+  height: 380px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  text-decoration: none;
+  color: #fff;
+}
+.attraction-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.attraction-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%);
+}
+.attraction-card-content { position: relative; z-index: 1; }
+.attraction-tag {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-on-dark);
+  margin-bottom: 8px;
+}
+.attraction-card h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.attraction-distance {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ── DINING ── */
+.dining-section { background: var(--ivory); padding: 100px 48px; }
+.dining-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1320px;
+  margin: 0 auto;
+  margin-top: 48px;
+}
+.dining-card {
+  padding: 32px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.dining-card h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--body-text);
+  margin-bottom: 6px;
+}
+.dining-cuisine {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+  display: block;
+  margin-bottom: 14px;
+}
+.dining-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+
+/* ── TRAVEL ── */
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+.travel-card {
+  background: #fff;
+  border-radius: 4px;
+  padding: 36px 28px;
+  border: 1px solid rgba(0,0,0,0.06);
+  text-align: center;
+}
+.travel-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  color: var(--gold);
+}
+.travel-card h3 {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--body-text);
+  margin-bottom: 10px;
+}
+.travel-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--dark);
+  padding: 120px 48px;
+  text-align: center;
+}
+.cta-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.cta-section p {
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  margin: 0 auto 36px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 48px;
+  border-radius: 2px;
+  transition: background 0.2s;
+  min-height: 44px;
+}
+.cta-btn:hover { background: #a07f0a; }
+
+/* ── FOOTER ── */
+.site-footer {
+  background: #0a0a0a;
+  padding: 48px;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+}
+.footer-address {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+}
+.footer-broker { margin-bottom: 4px; }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.open { display: flex; }
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+.lightbox-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.lightbox-btn:hover { background: rgba(255,255,255,0.1); }
+.lightbox-close { top: 16px; right: 16px; font-size: 2.4rem; }
+.lightbox-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox-counter {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.6);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .site-nav { padding: 16px 24px; }
+  .site-nav.scrolled { padding: 12px 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .section-pad { padding: 64px 24px; }
+  .intro-grid { grid-template-columns: 1fr; gap: 32px; }
+  .intro-image { height: 340px; }
+  .gallery-section { padding: 64px 16px; }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .gallery-item:nth-child(1) { grid-column: 1 / -1; height: 280px; }
+  .gallery-item:nth-child(2) { grid-column: 1 / -1; height: 240px; }
+  .gallery-item:nth-child(3) { grid-column: 1 / 2; height: 220px; }
+  .gallery-item:nth-child(4) { grid-column: 2 / 3; height: 220px; }
+  .gallery-item:nth-child(5) { grid-column: 1 / -1; height: 240px; }
+  .gallery-item:nth-child(6) { grid-column: 1 / 2; height: 220px; }
+  .gallery-item:nth-child(7) { grid-column: 2 / 3; height: 220px; }
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .attractions-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .attraction-card { height: 300px; }
+  .dining-section { padding: 64px 24px; }
+  .dining-grid { grid-template-columns: 1fr; }
+  .travel-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats { gap: 24px; }
+  .image-break { height: 45vh; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="#" class="nav-logo">6 East Gate Road</a>
+  <ul class="nav-links">
+    <li><a href="#residence">Residence</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#explore">Explore</a></li>
+    <li><a href="#dining">Dining</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#residence" class="mobile-link">Residence</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
+  <a href="#amenities" class="mobile-link">Amenities</a>
+  <a href="#explore" class="mobile-link">Explore</a>
+  <a href="#dining" class="mobile-link">Dining</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" aria-label="Property hero video and key details">
+  <video class="hero-video" autoplay muted playsinline loop preload="auto"
+         poster="stills/frame_003.jpg" aria-hidden="true">
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Wainscott, New York</p>
+    <h1 class="hero-title">6 East Gate Road</h1>
+    <p class="hero-subtitle">A 1920s Hamptons cottage reimagined for modern living</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-value">4</span>
+        <span class="hero-stat-label">Bedrooms</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">3</span>
+        <span class="hero-stat-label">Bathrooms</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">2,100</span>
+        <span class="hero-stat-label">Square Feet</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">0.46</span>
+        <span class="hero-stat-label">Acres</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"></div>
+</section>
+
+<!-- INTRO / RESIDENCE -->
+<section id="residence" class="section-pad" aria-label="Property introduction and description">
+  <div class="intro-grid">
+    <div class="intro-text">
+      <p class="eyebrow">The Residence</p>
+      <h2 class="section-title">Where Heritage Meets Hamptons Living</h2>
+      <p>Built in 1920 and thoughtfully reimagined, this quintessential Hamptons cottage on East Gate Road offers a rare blend of period charm and contemporary luxury. Step through the screened porch into an expansive den with soaring vaulted ceilings, where an oversized wood-burning fireplace anchors a living space flooded with natural light from skylights and French doors.</p>
+      <p>The first floor flows effortlessly from a formal dining room with a farmhouse table to a designer kitchen featuring custom cabinetry, marble countertops, and a center island with bar seating. Upstairs, the primary suite and two additional guest rooms provide serene retreats with curated wallpapers and bespoke furnishings. Outside, a heated gunite pool, stone patio, and charming red pool house set the stage for summer entertaining on nearly half an acre of private, tree-lined grounds.</p>
+    </div>
+    <img class="intro-image" src="stills/frame_017.jpg" alt="Aerial view of 6 East Gate Road showing the white shingled main house, red pool house, in-ground swimming pool, stone patio, circular driveway, and surrounding mature trees on nearly half an acre">
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-section" aria-label="Property photo gallery" role="list">
+  <div class="gallery-grid">
+    <div class="gallery-item" tabindex="0" role="listitem" aria-label="Living room with vaulted ceilings, fireplace, and designer furniture — press Enter to enlarge">
+      <img src="stills/frame_009.jpg" alt="Spacious living room with dramatic vaulted shiplap ceiling, wood-burning brick fireplace, tufted leather Chesterfield sofa, mid-century wooden chairs, and a large tropical bird painting">
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem" aria-label="Aerial view of the property with pool and pool house — press Enter to enlarge">
+      <img src="stills/frame_003.jpg" alt="Aerial view of the property showing the white main house, red pool house, stone patio with loungers, and in-ground swimming pool surrounded by lush green lawn and trees">
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem" aria-label="Kitchen with island and custom cabinetry — press Enter to enlarge">
+      <img src="stills/frame_012.jpg" alt="Chef's kitchen with large center island, dark wood base and marble countertop, metal bar stools, gray-green custom cabinetry, pendant lighting, and shiplap ceiling">
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem" aria-label="Bedroom with sage green walls and natural light — press Enter to enlarge">
+      <img src="stills/frame_013.jpg" alt="Serene bedroom with sage green walls, queen bed with white linens and gold throw, tufted armchair, rattan ceiling fixture, and sunlight streaming through curtained windows">
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem" aria-label="Bathroom with marble shower and floral wallpaper — press Enter to enlarge">
+      <img src="stills/frame_014.jpg" alt="Elegant bathroom with marble subway tile walk-in shower, rain showerhead, floral wallpaper, burgundy wainscoting, marble-topped vanity with vintage fixtures, and arched mirror">
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem" aria-label="Pool area with loungers and pool house — press Enter to enlarge">
+      <img src="stills/frame_004.jpg" alt="Ground-level view of the heated pool with striped cushion loungers on the stone patio, red pool house with white trim, and tall trees providing a private wooded backdrop">
+    </div>
+    <div class="gallery-item" tabindex="0" role="listitem" aria-label="Dining room with farmhouse table and kitchen view — press Enter to enlarge">
+      <img src="stills/frame_011.jpg" alt="Open-concept dining area with long farmhouse wood table, wishbone dining chairs, glass pendant light, open to kitchen with island and bar stools, shiplap ceiling, and wrought-iron staircase">
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK 1 -->
+<img class="image-break" src="stills/frame_007.jpg" role="presentation"
+     alt="View through open black French doors into the vaulted-ceiling living room with skylights, chandeliers, mid-century furniture, and greenery visible through the far windows">
+
+<!-- AMENITIES -->
+<section id="amenities" class="section-pad" aria-label="Property amenities and features">
+  <p class="eyebrow">Amenities</p>
+  <h2 class="section-title">Designed for Living</h2>
+  <div class="amenities-grid">
+    <div class="amenity-card">
+      <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="18" width="40" height="24" rx="2"/><path d="M12 18V10a12 12 0 0 1 24 0v8"/><line x1="24" y1="28" x2="24" y2="34"/></svg>
+      <h3>Heated Pool</h3>
+      <p>A gunite in-ground pool surrounded by a bluestone patio and manicured grounds, perfect for summer entertaining.</p>
+    </div>
+    <div class="amenity-card">
+      <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 40V12l18-8 18 8v28"/><rect x="18" y="24" width="12" height="16"/><line x1="14" y1="20" x2="14" y2="20.01" stroke-width="3"/><line x1="34" y1="20" x2="34" y2="20.01" stroke-width="3"/></svg>
+      <h3>Pool House</h3>
+      <p>A charming red-sided pool house that doubles as a studio or guest cottage with direct patio access.</p>
+    </div>
+    <div class="amenity-card">
+      <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 40V20L24 8l16 12v20H8z"/><path d="M18 40V28h12v12"/><path d="M20 18h8v6h-8z"/></svg>
+      <h3>Vaulted Ceilings</h3>
+      <p>Dramatic cathedral ceilings with exposed beams and skylights flood the living spaces with natural light.</p>
+    </div>
+    <div class="amenity-card">
+      <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="14" width="32" height="24" rx="2"/><path d="M16 14V8h16v6"/><line x1="24" y1="22" x2="24" y2="30"/><line x1="20" y1="26" x2="28" y2="26"/></svg>
+      <h3>Wood-Burning Fireplace</h3>
+      <p>An oversized brick fireplace serves as the heart of the great room, with a hand-carved mantel and decorative mirror.</p>
+    </div>
+    <div class="amenity-card">
+      <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="24" cy="24" rx="18" ry="8"/><path d="M6 24v8c0 4.4 8 8 18 8s18-3.6 18-8v-8"/><path d="M6 32v8c0 4.4 8 8 18 8s18-3.6 18-8v-8"/></svg>
+      <h3>Chef's Kitchen</h3>
+      <p>Custom gray-green cabinetry, marble countertops, a center island with bar seating, and shiplap ceiling details.</p>
+    </div>
+    <div class="amenity-card">
+      <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M24 6v36M6 24h36"/><path d="M10 12a28 28 0 0 1 28 0M10 36a28 28 0 0 0 28 0"/></svg>
+      <h3>French Doors</h3>
+      <p>Multiple sets of black-framed French doors connect indoor and outdoor living spaces seamlessly.</p>
+    </div>
+    <div class="amenity-card">
+      <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 40h40"/><path d="M8 40V16l16-10 16 10v24"/><path d="M18 40V28h12v12"/></svg>
+      <h3>Private Grounds</h3>
+      <p>Nearly half an acre of mature landscaping, privacy hedging, and a circular gravel driveway surrounded by oaks.</p>
+    </div>
+    <div class="amenity-card">
+      <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 8h24l4 10H8l4-10z"/><rect x="6" y="18" width="36" height="22" rx="2"/><line x1="6" y1="30" x2="42" y2="30"/></svg>
+      <h3>Garage Parking</h3>
+      <p>Attached garage with additional driveway parking, providing convenience and curb appeal year-round.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK 2 -->
+<img class="image-break" src="stills/frame_005.jpg" role="presentation"
+     alt="Friends socializing poolside with Aperol spritz cocktails on a sunny summer afternoon, with the pool and tree-lined backyard in the background">
+
+<!-- ATTRACTIONS -->
+<section id="explore" class="attractions-section section-pad" aria-label="Nearby attractions and points of interest">
+  <p class="eyebrow">The Neighborhood</p>
+  <h2 class="section-title">Explore the East End</h2>
+  <div class="attractions-grid">
+    <article class="attraction-card">
+      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=75" alt="">
+      <div class="attraction-card-content">
+        <p class="attraction-tag">Beach</p>
+        <h3>Main Beach</h3>
+        <p class="attraction-distance">3 miles · 8 min drive</p>
+      </div>
+    </article>
+    <article class="attraction-card">
+      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=75" alt="">
+      <div class="attraction-card-content">
+        <p class="attraction-tag">Beach</p>
+        <h3>Wainscott Beach</h3>
+        <p class="attraction-distance">1.5 miles · 4 min drive</p>
+      </div>
+    </article>
+    <article class="attraction-card">
+      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?w=800&q=75" alt="">
+      <div class="attraction-card-content">
+        <p class="attraction-tag">Culture</p>
+        <h3>Guild Hall</h3>
+        <p class="attraction-distance">3.5 miles · 9 min drive</p>
+      </div>
+    </article>
+    <article class="attraction-card">
+      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=800&q=75" alt="">
+      <div class="attraction-card-content">
+        <p class="attraction-tag">Culture</p>
+        <h3>Parrish Art Museum</h3>
+        <p class="attraction-distance">6 miles · 12 min drive</p>
+      </div>
+    </article>
+    <article class="attraction-card">
+      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=75" alt="">
+      <div class="attraction-card-content">
+        <p class="attraction-tag">Wine</p>
+        <h3>Wölffer Estate Vineyard</h3>
+        <p class="attraction-distance">4 miles · 10 min drive</p>
+      </div>
+    </article>
+    <article class="attraction-card">
+      <img class="attraction-card-bg" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=75" alt="">
+      <div class="attraction-card-content">
+        <p class="attraction-tag">Nature</p>
+        <h3>Paumanok Path</h3>
+        <p class="attraction-distance">0.5 miles · 2 min drive</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- DINING -->
+<section id="dining" class="dining-section" aria-label="Nearby dining and restaurants">
+  <div style="max-width:1320px;margin:0 auto;">
+    <p class="eyebrow">Dining</p>
+    <h2 class="section-title">A Culinary Destination</h2>
+    <div class="dining-grid">
+      <article class="dining-card">
+        <h3>Nick & Toni's</h3>
+        <span class="dining-cuisine">Mediterranean · Italian</span>
+        <p>East Hampton's legendary wood-oven restaurant serving seasonal Mediterranean cuisine with ingredients from their own organic garden since 1988.</p>
+      </article>
+      <article class="dining-card">
+        <h3>Osteria Salina</h3>
+        <span class="dining-cuisine">Sicilian · Italian</span>
+        <p>Waterside Sicilian dining in Wainscott with an illuminated onyx bar, live piano, wood-burning pizza oven, and an award-winning 150-bottle wine list.</p>
+      </article>
+      <article class="dining-card">
+        <h3>La Capannina</h3>
+        <span class="dining-cuisine">Italian · Traditional</span>
+        <p>A beloved Wainscott institution on Montauk Highway with generous portions, warm service, and the highest-rated Italian dining in the area.</p>
+      </article>
+      <article class="dining-card">
+        <h3>The 1770 House</h3>
+        <span class="dining-cuisine">American · Fine Dining</span>
+        <p>An intimate prix-fixe experience inside a restored East Hampton inn, featuring locally sourced ingredients and one of the Hamptons' finest wine cellars.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK 3 -->
+<img class="image-break" src="stills/frame_010.jpg" role="presentation"
+     alt="Evening view of the living room fireplace ablaze with warm light, decorative gold-framed mirror above the mantel, leather club chair, and cozy seating arrangement under the vaulted ceiling">
+
+<!-- GETTING HERE -->
+<section class="section-pad" aria-label="Travel directions and transportation options">
+  <p class="eyebrow">Getting Here</p>
+  <h2 class="section-title">Your Journey East</h2>
+  <div class="travel-grid">
+    <div class="travel-card">
+      <svg class="travel-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="10" width="28" height="18" rx="3"/><circle cx="13" cy="32" r="3"/><circle cx="27" cy="32" r="3"/><line x1="6" y1="22" x2="34" y2="22"/></svg>
+      <h3>From Manhattan</h3>
+      <p>Approximately 100 miles east via the Long Island Expressway to Route 27. Allow 2–2.5 hours depending on traffic; plan for 3+ hours on summer Fridays.</p>
+    </div>
+    <div class="travel-card">
+      <svg class="travel-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 6v28M30 6v28"/><rect x="6" y="12" width="28" height="16" rx="2"/><line x1="6" y1="34" x2="34" y2="34" stroke-width="2"/></svg>
+      <h3>By Train</h3>
+      <p>LIRR from Penn Station to East Hampton station (approx. 2.5 hours). Direct service runs more frequently during summer months. Station is 4 miles from the property.</p>
+    </div>
+    <div class="travel-card">
+      <svg class="travel-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 6l14 24H6L20 6z"/><path d="M16 20h8M12 26h16"/></svg>
+      <h3>By Air</h3>
+      <p>East Hampton Airport (HTO) is just 2 miles away, with private charter and blade helicopter services from Manhattan taking as little as 40 minutes.</p>
+    </div>
+    <div class="travel-card">
+      <svg class="travel-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="10" width="32" height="16" rx="4"/><circle cx="12" cy="30" r="3"/><circle cx="28" cy="30" r="3"/><path d="M4 18h32"/></svg>
+      <h3>By Jitney</h3>
+      <p>The Hampton Jitney offers luxury coach service from Manhattan's Upper East Side directly to Wainscott, with Wi-Fi and refreshments for a comfortable 2.5-hour ride.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section" aria-label="Contact and request information">
+  <p class="eyebrow" style="color: var(--gold-on-dark);">Schedule a Showing</p>
+  <h2>Begin Your Wainscott Story</h2>
+  <p>Experience this exceptional Hamptons retreat in person. Contact the listing agent to arrange a private tour of 6 East Gate Road.</p>
+  <a href="mailto:terry.thompson@elliman.com?subject=Inquiry%20—%206%20East%20Gate%20Road%2C%20Wainscott" class="cta-btn">Request Information</a>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <p class="footer-address">6 East Gate Road, Wainscott, NY 11975</p>
+  <p class="footer-broker">Listing Courtesy of Douglas Elliman Real Estate · Terry Thompson · 631-204-2734</p>
+  <p>&copy; 2026 Douglas Elliman Real Estate. All rights reserved. MLS #406415</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-btn lightbox-close" aria-label="Close image viewer">&times;</button>
+  <button class="lightbox-btn lightbox-prev" aria-label="Previous image">&lsaquo;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-btn lightbox-next" aria-label="Next image">&rsaquo;</button>
+  <div class="lightbox-counter" aria-live="polite" id="lightboxCounter"></div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  /* ── REDUCED MOTION — declared BEFORE any references ── */
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── HERO VIDEO ── */
+  var heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    if (prefersReducedMotion) {
+      heroVideo.pause();
+      heroVideo.style.display = 'none';
+    } else {
+      heroVideo.play().catch(function() {});
+    }
+  }
+
+  /* ── NAV SCROLL ── */
+  var nav = document.querySelector('.site-nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ── HAMBURGER ── */
+  var hamburger = document.querySelector('.hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function() {
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!open));
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+  document.querySelectorAll('.mobile-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ── LIGHTBOX ── */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxCounter = document.getElementById('lightboxCounter');
+  var galleryItems = document.querySelectorAll('.gallery-item');
+  var currentIndex = 0;
+  var triggerElement = null;
+  var lightboxButtons = lightbox.querySelectorAll('.lightbox-btn');
+
+  function openLightbox(index) {
+    currentIndex = index;
+    var item = galleryItems[currentIndex];
+    var img = item.querySelector('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCounter.textContent = (currentIndex + 1) + ' of ' + galleryItems.length;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lightbox.querySelector('.lightbox-close').focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    if (triggerElement) {
+      triggerElement.focus();
+      triggerElement = null;
+    }
+  }
+
+  function navigate(dir) {
+    currentIndex = (currentIndex + dir + galleryItems.length) % galleryItems.length;
+    var img = galleryItems[currentIndex].querySelector('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCounter.textContent = (currentIndex + 1) + ' of ' + galleryItems.length;
+  }
+
+  galleryItems.forEach(function(item, i) {
+    function open() { triggerElement = item; openLightbox(i); }
+    item.addEventListener('click', open);
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+
+  lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  lightbox.querySelector('.lightbox-prev').addEventListener('click', function() { navigate(-1); });
+  lightbox.querySelector('.lightbox-next').addEventListener('click', function() { navigate(1); });
+
+  lightbox.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+    if (e.key === 'Tab') {
+      var focusable = Array.from(lightboxButtons);
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+})();
+</script>
+</body>
+</html>
